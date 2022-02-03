@@ -1,0 +1,13 @@
+{
+  "name": "snyk-cleanup-archived-github-repositories",
+  "main": "index.js",
+  "bin": {
+    "snyk-cleanup-archived-github-repositories": "bin.js",
+    "snyk-cleanup": "bin.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.1.1",
+    "prompts": "^2.4.2"
+  },
+  "type": "module"
+}
