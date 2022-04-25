@@ -47,12 +47,13 @@ for (const organisation of chosenSnykOrganisations) {
     if (archivedOrDeleted) {
       archivedRepos.push(repository);
       globalArchivedRepos.push(repository);
-      deactivationCount = await requestToDeleteTheSnykProject(
+      await requestToDeleteTheSnykProject(
         repository,
         organisation,
         slug,
         snykToken
       );
+      deactivationCount += 1;
     } else {
       globalActive.push(repository);
     }
