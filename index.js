@@ -28,9 +28,9 @@ export function findGitHubProjectsScannedBySnyk(projects) {
         name: project.name.split(":")[0],
         id: project.id,
       };
-    } else if (project.origin === "cli" && project.isMonitored) {
+    } else if (project.origin === "cli" && project.isMonitored && project.remoteRepoUrl) {
       return {
-        name: project.remoteRepoUrl.split(".")[0],
+        name: project.remoteRepoUrl.replace('http://github.com/', '').replace('.git', ''),
         id: project.id,
       };
     } else {
